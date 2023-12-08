@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="rexprjkt"
+           fetch="https://github.com/rexprjkt"
+           revision="lineage-21" />
+
+  <remote  name="PQEnablers-devices"
+           fetch="https://github.com/PQEnablers-devices"
+           revision="lineage-21" />
+
+  <remote  name="xiaomi-mt6785-dev"
+           fetch="https://github.com/xiaomi-mt6785-dev"/>
+
+  <remove-project name="hardware_mediatek" />
+  <remove-project name="device_mediatek_sepolicy_vndr" />
+
+  <!-- Device repos -->
+  <project path="device/xiaomi/rosemary" name="device_xiaomi_rosemary" remote="rexprjkt" />
+  <project path="device/mediatek/sepolicy_vndr" name="android_device_mediatek_sepolicy_vndr" remote="PQEnablers-devices" />
+
+  <!-- Hardware repos -->
+  <project path="hardware/mediatek" name="android_hardware_mediatek" remote="PQEnablers-devices" />
+
+  <!-- Kernel repos -->
+  <project path="kernel/xiaomi/rosemary" name="android_kernel_xiaomi_mt6785" remote="xiaomi-mt6785-dev" revision="lineage-20" />
+
+  <!-- Vendor repos -->
+  <project path="vendor/xiaomi/rosemary" name="proprietary_vendor_xiaomi_rosemary" remote="rexprjkt" clone-depth="1" />
+
+</manifest>
